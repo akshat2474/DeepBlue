@@ -69,7 +69,6 @@ class _AnimatedStarfieldBackgroundState
 
   void _generateStars() {
     final random = math.Random(42);
-    // Much fewer stars for sparse look like Grok
     stars = List.generate(200, (index) {
       return OrbitingStar(
         initialX: random.nextDouble() * 2 - 0.5, // Spread beyond screen edges

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../constants/app_text_styles.dart';
 
-class GrokLogoSection extends StatelessWidget {
-  const GrokLogoSection({Key? key}) : super(key: key);
+class DeepBlueLogoSection extends StatelessWidget {
+  const DeepBlueLogoSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class GrokLogoSection extends StatelessWidget {
         // Use Transform.translate to pull the text up
         Transform.translate(
           offset: const Offset(0, -65), // Pull text even closer
-          child: const Text('DeepBlue', style: AppTextStyles.grokTitle),
+          child: const Text('DeepBlue', style: AppTextStyles.deepBlueTitle),
         ),
       ],
     );

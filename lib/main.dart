@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/grok_home_page.dart';
+import 'screens/deepBlue_home_page.dart';
 import 'constants/app_colors.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           surface: AppColors.cardBackground,
         ),
       ),
-      home: const GrokHomePage(),
+      home: const DeepBlueHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

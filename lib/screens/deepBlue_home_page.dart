@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import '../widgets/starfield_background.dart';
 import '../widgets/custom_app_bar.dart';
-import '../widgets/grok_logo_section.dart';
+import '../widgets/deepBlue_logo_section.dart';
 import '../widgets/bottom_input_section.dart';
 import '../models/feature_item.dart';
 import '../constants/app_colors.dart';
 
-class GrokHomePage extends StatefulWidget {
-  const GrokHomePage({Key? key}) : super(key: key);
+class DeepBlueHomePage extends StatefulWidget {
+  const DeepBlueHomePage({Key? key}) : super(key: key);
 
   @override
-  State<GrokHomePage> createState() => _GrokHomePageState();
+  State<DeepBlueHomePage> createState() => _DeepBlueHomePageState();
 }
 
-class _GrokHomePageState extends State<GrokHomePage> {
+class _DeepBlueHomePageState extends State<DeepBlueHomePage> {
   final TextEditingController _inputController = TextEditingController();
 
   List<FeatureItem> get _features => [
@@ -59,8 +59,7 @@ class _GrokHomePageState extends State<GrokHomePage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // Grok logo and title
-                const GrokLogoSection(),
+                const DeepBlueLogoSection(),
                 const SizedBox(height: 0), // Change from 40 to 20 (or less)
               ],
             ),

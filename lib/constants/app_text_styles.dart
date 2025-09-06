@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
-  static const TextStyle grokTitle = TextStyle(
+  static const TextStyle deepBlueTitle = TextStyle(
     color: AppColors.primaryWhite,
     fontSize: 44,
     fontWeight: FontWeight.w500,
