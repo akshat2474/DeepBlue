@@ -3,11 +3,10 @@ import '../widgets/starfield_background.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/deepBlue_logo_section.dart';
 import '../widgets/bottom_input_section.dart';
-import '../models/feature_item.dart';
 import '../constants/app_colors.dart';
 
 class DeepBlueHomePage extends StatefulWidget {
-  const DeepBlueHomePage({Key? key}) : super(key: key);
+  const DeepBlueHomePage({super.key});
 
   @override
   State<DeepBlueHomePage> createState() => _DeepBlueHomePageState();
@@ -16,28 +15,6 @@ class DeepBlueHomePage extends StatefulWidget {
 class _DeepBlueHomePageState extends State<DeepBlueHomePage> {
   final TextEditingController _inputController = TextEditingController();
 
-  List<FeatureItem> get _features => [
-    FeatureItem(
-      icon: Icons.search,
-      label: 'DeepSearch',
-      onPressed: _onDeepSearchPressed,
-    ),
-    FeatureItem(
-      icon: Icons.image_outlined,
-      label: 'Create Images',
-      onPressed: _onCreateImagesPressed,
-    ),
-    FeatureItem(
-      icon: Icons.science_outlined,
-      label: 'Research',
-      onPressed: _onResearchPressed,
-    ),
-    FeatureItem(
-      icon: Icons.feed_outlined,
-      label: 'Latest News',
-      onPressed: _onLatestNewsPressed,
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -82,11 +59,6 @@ class _DeepBlueHomePageState extends State<DeepBlueHomePage> {
   // Callback methods (same as before)
   void _onSearchPressed() => print('Search pressed');
   void _onSignUpPressed() => print('Sign up pressed');
-  void _onDeepSearchPressed() => print('DeepSearch pressed');
-  void _onCreateImagesPressed() => print('Create Images pressed');
-  void _onResearchPressed() => print('Research pressed');
-  void _onLatestNewsPressed() => print('Latest News pressed');
-  void _onPersonasPressed() => print('Personas pressed');
   void _onMicPressed() => print('Microphone pressed');
   void _onAttachmentPressed() => print('Attachment pressed');
   void _onAutoPressed() => print('Auto dropdown pressed');

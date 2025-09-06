@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants/app_text_styles.dart';
 
 class DeepBlueLogoSection extends StatelessWidget {
-  const DeepBlueLogoSection({Key? key}) : super(key: key);
+  const DeepBlueLogoSection({super.key});
 
   @override
   Widget build(BuildContext context) {

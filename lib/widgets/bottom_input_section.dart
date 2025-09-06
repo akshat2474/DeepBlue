@@ -11,14 +11,14 @@ class BottomInputSection extends StatelessWidget {
   final VoidCallback? onPrivacyPressed;
 
   const BottomInputSection({
-    Key? key,
+    super.key,
     this.controller,
     this.onMicPressed,
     this.onAttachmentPressed,
     this.onAutoPressed,
     this.onTermsPressed,
     this.onPrivacyPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -6,10 +6,10 @@ class CustomAppBar extends StatelessWidget {
   final VoidCallback? onSignUpPressed;
 
   const CustomAppBar({
-    Key? key,
+    super.key,
     this.onSearchPressed,
     this.onSignUpPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

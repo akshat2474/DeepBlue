@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import '../constants/app_colors.dart';
 
 class AnimatedStarfieldBackground extends StatefulWidget {
-  const AnimatedStarfieldBackground({Key? key}) : super(key: key);
+  const AnimatedStarfieldBackground({super.key});
 
   @override
   State<AnimatedStarfieldBackground> createState() =>
@@ -210,7 +209,7 @@ class OrbitalStarfieldPainter extends CustomPainter {
             0.5 * math.sin(orbitProgress * star.twinkleSpeed * 4 * math.pi);
         final currentOpacity = (star.opacity * twinkle).clamp(0.15, 0.85);
 
-        paint.color = Colors.white.withOpacity(currentOpacity);
+        paint.color = Colors.white.withValues(alpha:currentOpacity);
         canvas.drawCircle(Offset(finalX, finalY), star.size, paint);
       }
     }
@@ -237,7 +236,7 @@ class OrbitalStarfieldPainter extends CustomPainter {
             currentY >= -0.1 &&
             currentY <= 1.1) {
           // Comet head
-          paint.color = Colors.white.withOpacity(0.95 - progress * 0.4);
+          paint.color = Colors.white.withValues(alpha:0.95 - progress * 0.4);
           canvas.drawCircle(
             Offset(currentX * size.width, currentY * size.height),
             activeComet!.size,
@@ -267,7 +266,7 @@ class OrbitalStarfieldPainter extends CustomPainter {
               final segmentSize =
                   activeComet!.size * (1.0 - segmentRatio * 0.6);
 
-              paint.color = Colors.white.withOpacity(opacity.clamp(0.0, 1.0));
+              paint.color = Colors.white.withValues(alpha:opacity.clamp(0.0, 1.0));
               canvas.drawCircle(
                 Offset(tailX * size.width, tailY * size.height),
                 segmentSize,
