@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/deepBlue_home_page.dart';
+import 'screens/deep_blue_home_page.dart';
 import 'constants/app_colors.dart';
 
 void main() {
