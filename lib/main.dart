@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/deep_blue_home_page.dart';
+import 'screens/splash_screen.dart';
 import 'constants/app_colors.dart';
 
 void main() {
@@ -12,16 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DeepBlue',
-      theme: ThemeData.dark().copyWith(
+      title: 'DeepBlue App',
+      theme: ThemeData(
+        brightness: Brightness.dark,
         scaffoldBackgroundColor: AppColors.backgroundBlack,
-        colorScheme: const ColorScheme.dark(
-          primary: Colors.white,
-          secondary: Colors.grey,
-          surface: AppColors.cardBackground,
-        ),
+        primaryColor: Colors.white,
       ),
-      home: const DeepBlueHomePage(),
+      home: const SplashScreen(), // Start with splash screen
       debugShowCheckedModeBanner: false,
     );
   }
