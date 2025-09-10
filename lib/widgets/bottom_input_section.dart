@@ -5,6 +5,8 @@ import '../constants/app_text_styles.dart';
 class BottomInputSection extends StatelessWidget {
   final TextEditingController? controller;
   final VoidCallback? onMicPressed;
+  final VoidCallback? onSendPressed; // New: Callback for the send button
+  final bool hasText; // New: To control which button to show
   final VoidCallback? onAttachmentPressed;
   final VoidCallback? onAutoPressed;
   final VoidCallback? onTermsPressed;
@@ -14,6 +16,8 @@ class BottomInputSection extends StatelessWidget {
     super.key,
     this.controller,
     this.onMicPressed,
+    this.onSendPressed,
+    this.hasText = false, // Default to false
     this.onAttachmentPressed,
     this.onAutoPressed,
     this.onTermsPressed,
@@ -47,7 +51,7 @@ class BottomInputSection extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 16),
                     child: IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.attachment_outlined,
                         color: AppColors.primaryWhite,
                         size: 20,
@@ -71,6 +75,7 @@ class BottomInputSection extends StatelessWidget {
                       ),
                       maxLines: null,
                       minLines: 1,
+                      onSubmitted: (_) => onSendPressed?.call(), // Allow sending with keyboard
                     ),
                   ),
                   // Auto dropdown
@@ -88,7 +93,7 @@ class BottomInputSection extends StatelessWidget {
                         ),
                         borderRadius: BorderRadius.circular(16),
                       ),
-                      child: Row(
+                      child: const Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
@@ -99,7 +104,7 @@ class BottomInputSection extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          const SizedBox(width: 4),
+                          SizedBox(width: 4),
                           Icon(
                             Icons.keyboard_arrow_down,
                             color: AppColors.primaryWhite,
@@ -110,24 +115,40 @@ class BottomInputSection extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  // Microphone button
-                  GestureDetector(
-                    onTap: onMicPressed ?? () {},
-                    child: Container(
-                      width: 36,
-                      height: 36,
-                      margin: const EdgeInsets.only(right: 8),
-                      decoration: const BoxDecoration(
-                        color: AppColors.primaryWhite,
-                        shape: BoxShape.circle,
+                  
+                  // Conditionally show Send or Mic button
+                  if (hasText)
+                    // Show Send button if there is text
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: IconButton(
+                        icon: const Icon(
+                          Icons.send,
+                          color: AppColors.primaryWhite,
+                        ),
+                        onPressed: onSendPressed,
+                        tooltip: 'Send message',
                       ),
-                      child: const Icon(
-                        Icons.mic,
-                        color: AppColors.primaryBlack,
-                        size: 18,
+                    )
+                  else
+                    // Show Microphone button if there is no text
+                    GestureDetector(
+                      onTap: onMicPressed ?? () {},
+                      child: Container(
+                        width: 36,
+                        height: 36,
+                        margin: const EdgeInsets.only(right: 8),
+                        decoration: const BoxDecoration(
+                          color: AppColors.primaryWhite,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.send,
+                          color: AppColors.primaryBlack,
+                          size: 18,
+                        ),
                       ),
                     ),
-                  ),
                 ],
               ),
             ),
