@@ -25,7 +25,6 @@ class DeepBlueLogoSection extends StatelessWidget {
             ),
           ),
         ),
-        // Use Transform.translate to pull the text up
         Transform.translate(
           offset: const Offset(0, -65), // Pull text even closer
           child: const Text('DeepBlue', style: AppTextStyles.deepBlueTitle),
